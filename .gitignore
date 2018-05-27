@@ -1,0 +1,8 @@
+# excluding folders
+
+node_modules/
+.idea/
+
+#excluding files
+
+package-lock.json
