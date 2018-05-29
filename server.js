@@ -4,21 +4,24 @@ const app = express();
 app.use(express.static(__dirname + "/public"));
 
 app.get('/', (req, res) => {
-   res.send("<h1>hello Express</h1>");
+   // res.send("<h1>hello Express</h1>");
+   res.send({
+      name: "Mahmoud",
+      likes: [
+          "Ping Pong",
+          "adventure"
+      ]
+   });
 });
 
 app.get('/about', (req, res) => { // handler callback when make a request to this path
-   res.send("About");
+   res.send("About page");
 });
 
 app.get('/bad', (req, res) => {
    res.send({
       errorMessage: "unable to fulfilled you data"
    });
-});
-
-app.get('/index.html', (req, res) => {
-   res.send(res.params);
 });
 
 app.listen(3000, () => {
