@@ -68,9 +68,9 @@ app.get('/about', (req, res) => { // handler callback when make a request to thi
    });
 });
 
-app.get('/project', (req, res) => {
-   res.render('project.hbs', {
-      pageTitle: "Portfolio page here"
+app.get('/projects', (req, res) => {
+   res.render('projects.hbs', {
+      pageTitle: "projects"
    })
 });
 
