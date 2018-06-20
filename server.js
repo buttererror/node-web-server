@@ -5,13 +5,14 @@ const fs = require('fs');
 
 const hbs = require('hbs');
 
+let port = process.env.PORT || 3000;
+
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 
 
 app.use((req, res, next) => {
-   console.log('Bobo');
    let now = new Date().toString();
    let log = `${now}: ${req.method} ${req.url}`;
    console.log(log);
@@ -73,6 +74,6 @@ app.get('/bad', (req, res) => {
    });
 });
 
-app.listen(3000, () => {
-   console.log("staring server on port 3000");
+app.listen(port, () => {
+   console.log(`staring server on port ${port}`);
 });
